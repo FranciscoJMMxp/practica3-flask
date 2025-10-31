@@ -3,7 +3,8 @@ from sqlalchemy import create_engine, text
 
 app = Flask(__name__)
 
-DATABASE_URL = 'postgresql://neondb_owner:npg_vWoGATj8f3YH@ep-noisy-heart-a4m5rbaa-pooler.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require'
+import os
+DATABASE_URL = os.environ.get("DATABASE_URL")
 
 engine = create_engine(DATABASE_URL)
 
