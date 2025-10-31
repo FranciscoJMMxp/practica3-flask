@@ -3,10 +3,8 @@ from sqlalchemy import create_engine, text
 
 app = Flask(__name__)
 
-# 🔹 Sustituye tu cadena real desde Neon.tech (con +pg8000)
-DATABASE_URL = "postgresql+pg8000://neondb_owner:npg_jgLvA9Onc6CB@ep-still-mountain-ad6oq9x8-pooler.c-2.us-east-1.aws.neon.tech/neondb"
+DATABASE_URL = 'postgresql://neondb_owner:npg_vWoGATj8f3YH@ep-noisy-heart-a4m5rbaa-pooler.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require'
 
-# 🔹 Crear conexión global
 engine = create_engine(DATABASE_URL)
 
 @app.route('/')
