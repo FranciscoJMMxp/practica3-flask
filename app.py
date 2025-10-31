@@ -1,10 +1,10 @@
 from flask import Flask, render_template, request, redirect, url_for
-from sqlalchemy import create_engine, text
-
-app = Flask(__name__)
-
 import os
+from sqlalchemy import create_engine
+
 DATABASE_URL = os.environ.get("DATABASE_URL")
+engine = create_engine(DATABASE_URL, connect_args={"sslmode": "require"})
+
 
 engine = create_engine(DATABASE_URL)
 
